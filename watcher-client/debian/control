@@ -1,0 +1,14 @@
+Source: watcher-client
+Section: misk
+Priority: extra
+Maintainer: Avramenko Evgeny <kanst9@yandex-team.ru>
+Build-Depends: cdbs, debhelper (>= 8.0.0), python (>=2.6)
+Standards-Version: 3.9.2
+XS-Python-Version: all
+Homepage: https://github.com/Kanst/watcher/watcher-client
+
+Package: watcher-client
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}
+XB-Python-Version: all
+Description: client for watcher (https://github.com/Kanst/watcher)
