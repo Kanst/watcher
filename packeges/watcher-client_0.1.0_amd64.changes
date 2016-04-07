@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Fri, 1 Apr 2016 10:21:58 +0400
+Source: watcher-client
+Binary: watcher-client
+Architecture: source all
+Version: 0.1.0
+Distribution: unstable
+Urgency: low
+Maintainer: Avramenko Evgeny <kanst9@yandex-team.ru>
+Changed-By: Evgeny Avramenko <kanst9@yandex-team.ru>
+Description: 
+ watcher-client - client for watcher (https://github.com/Kanst/watcher)
+Changes: 
+ watcher-client (0.1.0) unstable; urgency=low
+ .
+   * Initial Release.
+Checksums-Sha1: 
+ 1b94b2111dc449343ea5c89678007671791fe15e 1170 watcher-client_0.1.0.dsc
+ 401a66995cc235e7baaff0d34068e1febf74a0a3 14964 watcher-client_0.1.0.tar.gz
+ ebd1bbb4fa0c118f2a47a11c71f4199f71b4dc44 12330 watcher-client_0.1.0_all.deb
+Checksums-Sha256: 
+ 64e244cb9b94da66c547fce98ded393ea6bc04b372f0753fa6c7c8c63aa7ca8a 1170 watcher-client_0.1.0.dsc
+ 9c946350fc5841b9922d60587b18d11002cfe9d39b56d709bf41934fb508afbf 14964 watcher-client_0.1.0.tar.gz
+ 946f9a5b5abd3c34d1856bc70e152c19ef48de221868220d355d445db688ab60 12330 watcher-client_0.1.0_all.deb
+Files: 
+ 396d55c36f4a2557f1b1971bebf3c1ad 1170 misk extra watcher-client_0.1.0.dsc
+ 75966654ddd7a78304358340603c158c 14964 misk extra watcher-client_0.1.0.tar.gz
+ c683435a3727fc0e6d1a085a26b37ad7 12330 misk extra watcher-client_0.1.0_all.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJXBmaQAAoJEDBr1JZLlW7qitYH/jMpZMTjKs5Be49c9KfDdfsL
+XOPMYwvKykKclcpMEg1uFzEiHfo2MLyJkNJgk1ZNca4SYbTGKwssrz3F0nes3nUT
+/opWCj9kg1m2TXv33ledkGd4fbHeM2HhcCZHgl5YhNKAoAkbihZdieTqT7Ml55bi
+Lir9VEo0+fZbbk8+MOzTM73hnFpJ3VQUU04pxT73VdsBIYj9O1ZhFeGnfyZUCPdO
+2EGSMtwYI3oIEgTNM0mPTTh/YL47ElsuqXP8RfkScJj238Wz+rY/qW4V7MLkpgel
+hg4otnKceTx0m2mKypoqwHlCQEYBSSpK17KxigjK25yQR4giWCthI0czE5HIM8U=
+=kD7Z
+-----END PGP SIGNATURE-----

@@ -1,0 +1,161 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: пакет исходных текстов watcher-client
+dpkg-buildpackage: версия исходных текстов 0.1.0
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: исходные тексты изменены Evgeny Avramenko <kanst9@yandex-team.ru>
+ dpkg-source --before-build watcher-client
+dpkg-buildpackage: архитектура узла amd64
+ fakeroot debian/rules clean
+test -x debian/rules
+dh_clean 
+cd . && \
+		python setup.py clean \
+		-a
+running clean
+'build/lib.linux-x86_64-2.7' does not exist -- can't clean it
+'build/bdist.linux-x86_64' does not exist -- can't clean it
+'build/scripts-2.7' does not exist -- can't clean it
+rm -rf debian/python-module-stampdir
+find "/home/kanst9/yandex_disk/Documents/code/watcher/watcher-client" -name '*.py[co]' -delete
+find "/home/kanst9/yandex_disk/Documents/code/watcher/watcher-client" -name __pycache__ -type d -empty -delete
+find "/home/kanst9/yandex_disk/Documents/code/watcher/watcher-client" -prune -name '*.egg-info' -exec rm -rf '{}' ';'
+ dpkg-source -b watcher-client
+dpkg-source: инфо: используется формат исходника «3.0 (native)»
+dpkg-source: инфо: сборка watcher-client в watcher-client_0.1.0.tar.gz
+dpkg-source: инфо: сборка watcher-client в watcher-client_0.1.0.dsc
+ debian/rules build
+test -x debian/rules
+mkdir -p "."
+mkdir -p debian/python-module-stampdir
+cd . && \
+		python setup.py build \
+		--build-base="/home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/./build"
+running build
+running build_py
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/build
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/build/lib.linux-x86_64-2.7
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/build/lib.linux-x86_64-2.7/watcher_client
+copying watcher_client/watcher_tcpoutfiles.py -> /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/./build/lib.linux-x86_64-2.7/watcher_client
+copying watcher_client/watcher_agent.py -> /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/./build/lib.linux-x86_64-2.7/watcher_client
+copying watcher_client/__init__.py -> /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/./build/lib.linux-x86_64-2.7/watcher_client
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/build/lib.linux-x86_64-2.7/pydaemon
+copying pydaemon/__init__.py -> /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/./build/lib.linux-x86_64-2.7/pydaemon
+touch debian/python-module-stampdir/watcher-client
+ fakeroot debian/rules binary
+test -x debian/rules
+dh_testroot
+dh_prep 
+dh_installdirs -A 
+mkdir -p "."
+mkdir -p debian/python-module-stampdir
+cd . && \
+		python setup.py build \
+		--build-base="/home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/./build"
+running build
+running build_py
+touch debian/python-module-stampdir/watcher-client
+Adding cdbs dependencies to debian/watcher-client.substvars
+dh_installdirs -pwatcher-client 
+cd . && \
+		python setup.py install \
+		--root="/home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/" \
+		--install-purelib=/usr/lib/python2.7/site-packages/ \
+		--prefix=/usr --no-compile -O0 
+running install
+running build
+running build_py
+running install_lib
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/usr
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/usr/lib
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/usr/lib/python2.7
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/usr/lib/python2.7/site-packages
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/usr/lib/python2.7/site-packages/watcher_client
+copying build/lib.linux-x86_64-2.7/watcher_client/watcher_tcpoutfiles.py -> /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/usr/lib/python2.7/site-packages/watcher_client
+copying build/lib.linux-x86_64-2.7/watcher_client/watcher_agent.py -> /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/usr/lib/python2.7/site-packages/watcher_client
+copying build/lib.linux-x86_64-2.7/watcher_client/__init__.py -> /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/usr/lib/python2.7/site-packages/watcher_client
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/usr/lib/python2.7/site-packages/pydaemon
+copying build/lib.linux-x86_64-2.7/pydaemon/__init__.py -> /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/usr/lib/python2.7/site-packages/pydaemon
+running install_data
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/etc
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/etc/watcher-client
+copying src/etc/watcher-client/watcher-agent.cfg -> /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/etc/watcher-client/
+copying src/etc/watcher-client/watcher-tcpoutfiles.conf -> /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/etc/watcher-client/
+creating /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/etc/init.d
+copying src/watcher-daemon -> /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/etc/init.d/
+running install_egg_info
+running egg_info
+writing watcher_client.egg-info/PKG-INFO
+writing top-level names to watcher_client.egg-info/top_level.txt
+writing dependency_links to watcher_client.egg-info/dependency_links.txt
+reading manifest file 'watcher_client.egg-info/SOURCES.txt'
+writing manifest file 'watcher_client.egg-info/SOURCES.txt'
+Copying watcher_client.egg-info to /home/kanst9/yandex_disk/Documents/code/watcher/watcher-client/debian/watcher-client/usr/lib/python2.7/site-packages/watcher_client-0.3.0-py2.7.egg-info
+running install_scripts
+dh_installdocs -pwatcher-client 
+dh_installexamples -pwatcher-client 
+dh_installman -pwatcher-client  
+dh_installinfo -pwatcher-client  
+dh_installmenu -pwatcher-client 
+dh_installcron -pwatcher-client 
+dh_installinit -pwatcher-client  
+dh_installdebconf -pwatcher-client 
+dh_installemacsen -pwatcher-client   
+dh_installcatalogs -pwatcher-client 
+dh_installpam -pwatcher-client 
+dh_installlogrotate -pwatcher-client 
+dh_installlogcheck -pwatcher-client 
+dh_installchangelogs -pwatcher-client  
+dh_installudev -pwatcher-client 
+dh_lintian -pwatcher-client 
+dh_bugfiles -pwatcher-client 
+dh_install -pwatcher-client  
+dh_link -pwatcher-client  
+dh_installmime -pwatcher-client 
+dh_installgsettings -pwatcher-client 
+dh_pycentral -pwatcher-client  
+\1 better written as $1 at /usr/bin/dh_pycentral line 203.
+renaming debian/watcher-client/usr/lib/python2.7/site-packages to debian/watcher-client/usr/lib/python2.7/dist-packages
+rename: watcher_client-0.3.0-py2.7.egg-info -> watcher_client-0.3.0.egg-info
+dh_strip -pwatcher-client  
+dh_compress -pwatcher-client  
+dh_fixperms -pwatcher-client  
+dh_makeshlibs -pwatcher-client  
+dh_installdeb -pwatcher-client 
+dh_perl -pwatcher-client 
+dh_shlibdeps -pwatcher-client    
+dh_gencontrol -pwatcher-client  
+dpkg-gencontrol: предупреждение: Depends поле из пакета watcher-client: неизвестная подстановочная переменная ${shlibs:Depends}
+dpkg-gencontrol: предупреждение: пакет watcher-client: неиспользуемая подстановочная переменная ${python:Versions}
+# only call dh_scour for packages in main
+if grep -q '^Component:[[:space:]]*main' /CurrentlyBuilding 2>/dev/null; then dh_scour -pwatcher-client ; fi
+dh_md5sums -pwatcher-client 
+dh_builddeb -pwatcher-client 
+dpkg-deb: предупреждение: «debian/watcher-client/DEBIAN/control» содержит определённое пользователем поле «Python-Version»
+dpkg-deb: предупреждение: проигнорировано 1 предупреждение об управляющем(их) файле(ах)
+
+dpkg-deb: сборка пакета «watcher-client» в файл «../watcher-client_0.1.0_all.deb».
+ dpkg-genchanges  >../watcher-client_0.1.0_amd64.changes
+dpkg-genchanges: в закачку включён весь исходный код
+ dpkg-source --after-build watcher-client
+dpkg-buildpackage: закачка всего; родной пакет Debian (включены все пакеты исходного кода)
+Now running lintian...
+E: watcher-client changes: bad-distribution-in-changes-file unstable
+E: watcher-client source: missing-build-dependency python-central
+W: watcher-client source: ancient-standards-version 3.9.2 (current is 3.9.5)
+E: watcher-client: helper-templates-in-copyright
+W: watcher-client: copyright-has-url-from-dh_make-boilerplate
+E: watcher-client: copyright-contains-dh_make-todo-boilerplate
+E: watcher-client: extended-description-is-empty
+W: watcher-client: unknown-section misk
+W: watcher-client: script-in-etc-init.d-not-registered-via-update-rc.d etc/init.d/watcher-daemon
+W: watcher-client: init.d-script-uses-usr-interpreter etc/init.d/watcher-daemon /usr/bin/env
+W: watcher-client: init.d-script-missing-lsb-section etc/init.d/watcher-daemon
+E: watcher-client: init.d-script-does-not-implement-required-option etc/init.d/watcher-daemon force-reload
+W: watcher-client: init.d-script-does-not-source-init-functions etc/init.d/watcher-daemon
+Finished running lintian.
+Now signing changes and any dsc files...
+ signfile watcher-client_0.1.0.dsc Evgeny Avramenko <kanst9@yandex-team.ru>
+
+ signfile watcher-client_0.1.0_amd64.changes Evgeny Avramenko <kanst9@yandex-team.ru>
+
+Successfully signed dsc and changes files
