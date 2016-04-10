@@ -1,0 +1,105 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+from __future__ import print_function
+import sys
+sys.path.append('/usr/share/pyshared')
+import argparse
+import pydaemon
+import os
+import yaml
+import multiprocessing
+
+from watcher_server.netcat_to_mongo import netcat_to_mongo
+from watcher_server.http_to_mongo import http_to_mongo
+from watcher_server.sql_to_mongo import sql_to_mongo
+from watcher_server.modules_to_mongo.pg_stat_database import pg_stat_database
+
+CONFIG_FILE = '/etc/watcher-server/netcat_to_mongo.yaml'
+CONFIG_HTTP_FILE = '/etc/watcher-server/http_to_mongo.yaml'
+CONFIG_SQL_FILE = '/etc/watcher-server/sql_to_mongo.yaml'
+CONFIG_PG_STAT_FILE = '/etc/watcher-server/pg_stat_database_to_mongo.yaml'
+
+
+class ExampleDaemon(pydaemon.Daemon):
+
+    def __init__(self):
+        cwd = '/var/log/watcher-server/'
+        self.stdin = '/dev/null'
+        self.stdout = os.path.join(cwd, 'watcher-server.log')
+        self.stderr = os.path.join(cwd, 'watcher-server.error.log')
+        self.pidfile = os.path.join('/var/run/', 'watcher-server.pid')
+
+    def run(self):
+        if os.path.isfile(CONFIG_FILE):
+            f = open(CONFIG_FILE)
+            config = yaml.safe_load(f)
+            f.close()
+
+        while True:
+            procs = []
+            if os.path.isfile(CONFIG_HTTP_FILE):
+                procs.append(
+                    multiprocessing.Process(target=http_to_mongo, args=(CONFIG_HTTP_FILE,)))
+            if os.path.isfile(CONFIG_SQL_FILE):
+                procs.append(
+                    multiprocessing.Process(target=sql_to_mongo, args=(CONFIG_SQL_FILE,)))
+            if os.path.isfile(CONFIG_PG_STAT_FILE):
+                procs.append(multiprocessing.Process(
+                    target=pg_stat_database.pg_stat_database, args=(CONFIG_PG_STAT_FILE,)))
+            if os.path.isfile(CONFIG_FILE):
+                for group, value in config.items():
+                    port = value.get('tailer_port', 89)
+                    ipv6only = value.get('ipv6only', False)
+                    procs.append(multiprocessing.Process(
+                        target=netcat_to_mongo, args=(group, value['update_time'], port, ipv6only, )))
+
+            for i in range(len(procs)):
+                # procs[i].daemon = True
+                procs[i].start()
+            for i in range(len(procs)):
+                procs[i].join()
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='watcher-server runner',
+                                     epilog='That\'s all folks')
+
+    parser.add_argument('operation',
+                        metavar='OPERATION',
+                        type=str,
+                        help='Operation with daemon. Accepts any of these values: start, stop, restart, status',
+                        choices=['start', 'stop', 'restart', 'status'])
+    args = parser.parse_args()
+    operation = args.operation
+
+    # Daemon
+    daemon = ExampleDaemon()
+
+    if operation == 'start':
+        print("Starting daemon")
+        daemon.start()
+        pid = daemon.get_pid()
+
+        if not pid:
+            print("Unable run daemon")
+        else:
+            print("Daemon is running [PID=%d]" % pid)
+
+    elif operation == 'stop':
+        print("Stoping daemon")
+        daemon.stop()
+
+    elif operation == 'restart':
+        print("Restarting daemon")
+        daemon.restart()
+
+    elif operation == 'status':
+        print("Viewing daemon status")
+        pid = daemon.get_pid()
+
+        if not pid:
+            print("Daemon isn't running ;)")
+        else:
+            print("Daemon is running [PID=%d]" % pid)
+    sys.exit(0)

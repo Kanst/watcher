@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo 'db.addUser("dashing", "WtDqAZ0J")' | mongo dashing
+
+exit 0

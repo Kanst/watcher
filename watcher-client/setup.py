@@ -1,19 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from setuptools import setup, find_packages
+
 
 def version():
     return "0.3.0"
 
-from setuptools import setup, find_packages
-
 
 def dataFiles():
     from glob import glob
-    from os import listdir
     installPath = "/etc/watcher-client/"
-    configPath="src/etc/watcher-client/"
-    result= [(installPath, glob(configPath+"*.cfg")+glob(configPath+"*.conf"))]
+    configPath = "src/etc/watcher-client/"
+    result = [(installPath, glob(configPath+"*.cfg")+glob(configPath+"*.conf"))]
     result.append(("/etc/init.d/", ["src/watcher-daemon"]))
     return result
 

@@ -1,0 +1,27 @@
+http://postmaster01d.yandex.ru:2000/stat/domains:
+    type: json
+    name:
+        postmaster_domains: domains
+        postmaster_emails: emails
+    update_time: 60
+http://yagraphs.mail.yandex.net/get_last_fuckup:
+    type: huetype
+    name:
+        dbf:
+    update_time: 60
+http://currency-ex.yandex.net/84/225:
+    type: currency
+    name:
+        uds:
+    update_time: 60
+http://currency-ex.yandex.net/205/225:
+    type: currency
+    name:
+        eur:
+    update_time: 60
+http://download.finance.yahoo.com/d/quotes.csv?s=YNDX&f=a':
+    type: huetype
+    name:
+        yndx:
+    update_time: 60
+
