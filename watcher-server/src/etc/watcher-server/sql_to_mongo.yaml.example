@@ -1,38 +1,18 @@
 ddfl:
     request: select round(sum(grand_total_free_space)/(select sum(req_size)/1024/3 from mulca_stats.mulca_usage_stats where req_type='PUT' and (TO_DAYS(CURDATE()) - TO_DAYS(date)) <= 3 and service not regexp 'sasulca|zima|leto|(ip6-)?localhost|migrate|mailsql'),2) as days_left from mulca_migrate.active_hosts where in_service=0;
-    host: mstat01g.mail.yandex.net
-    user: mulcastats
-    pass: mulcastats
+    host: yandex.net
+    user: user
+    pass: pass
     port: 3306
     db: mulca_shepherd
     db_type: MySQLdb
     update_time: 1800
 ddfz:
     request: select round(sum(grand_total_free_space)/(select sum(req_size)/1024/3 from mulca_stats.mulca_usage_stats where req_type='PUT' and (TO_DAYS(CURDATE()) - TO_DAYS(date)) <= 3 and service not regexp 'sasulca|zima|leto|(ip6-)?localhost|migrate|mailsql'),2) as days_left from mulca_migrate.archive_hosts where in_service=0;
-    host: mstat01g.mail.yandex.net
-    user: mulcastats
-    pass: mulcastats
+    host: yandex.net
+    user: dfsdf
+    pass: fdsdf
     port: 3306
     db: mulca_shepherd
     db_type: MySQLdb
     update_time: 1800
-
-mms:
-    request: select CAST(sum(speed) * 60 * 60 * 24 / 1024 / 1024 AS UNSIGNED) from mulca_migrate.current_moving;
-    host: mstat01g.mail.yandex.net
-    user: migrate
-    pass: Vohngou8
-    port: 3306
-    db: mulca_migrate
-    db_type: MySQLdb
-    update_time: 300
-
-mms-test:
-    request: select ifnull(CAST(sum(speed) * 60 * 60 * 24 / 1024 / 1024 AS UNSIGNED),0) from mulca_migrate.current_moving;
-    host: mstat-test01g.cmail.yandex.net
-    user: migrate
-    pass: Vohngou8
-    port: 3306
-    db: mulca_migrate
-    db_type: MySQLdb
-    update_time: 300
