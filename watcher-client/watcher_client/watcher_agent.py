@@ -606,8 +606,7 @@ class AgentWorker(Thread):
         header.extend(custom.columns())
 
         # remove unixtime
-        tmp_header = header
-        tmp_header.pop(1)
+        tmp_header = header[3:]
 
         sys.stdout.write(self.dlmtr.join(header) + '\n')
         sys.stdout.flush()
@@ -645,8 +644,7 @@ class AgentWorker(Thread):
                 logger.debug("str: %s" % row)
 
                 # print dict to file
-                tmp_line = line
-                tmp_line.pop(1)
+                tmp_line = line[2:]
                 out_to_file = dict(zip(tmp_header, tmp_line))
                 f = open(self.c_file, 'w')
                 for key, val in out_to_file.iteritems():

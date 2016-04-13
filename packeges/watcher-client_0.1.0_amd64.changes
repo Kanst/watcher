@@ -18,26 +18,26 @@ Changes:
  .
    * Initial Release.
 Checksums-Sha1: 
- 1b94b2111dc449343ea5c89678007671791fe15e 1170 watcher-client_0.1.0.dsc
- 401a66995cc235e7baaff0d34068e1febf74a0a3 14964 watcher-client_0.1.0.tar.gz
- ebd1bbb4fa0c118f2a47a11c71f4199f71b4dc44 12330 watcher-client_0.1.0_all.deb
+ 9dd2dbe1c68a7e6fb055542d0747309feff273b8 1170 watcher-client_0.1.0.dsc
+ 84fbafbcb8961c01d172641c72e3dc57344d4f12 15013 watcher-client_0.1.0.tar.gz
+ 26327942491f240e335f83c7b697e667b2f82749 12330 watcher-client_0.1.0_all.deb
 Checksums-Sha256: 
- 64e244cb9b94da66c547fce98ded393ea6bc04b372f0753fa6c7c8c63aa7ca8a 1170 watcher-client_0.1.0.dsc
- 9c946350fc5841b9922d60587b18d11002cfe9d39b56d709bf41934fb508afbf 14964 watcher-client_0.1.0.tar.gz
- 946f9a5b5abd3c34d1856bc70e152c19ef48de221868220d355d445db688ab60 12330 watcher-client_0.1.0_all.deb
+ d618ff4cb706acca3404860ecc65d54dc755709636ecec391e0fd83832c10e8f 1170 watcher-client_0.1.0.dsc
+ 45c71d77578250fb8a37a29212c31b11044a18ba5be92b714e78cbe001144d26 15013 watcher-client_0.1.0.tar.gz
+ a232635d04e947cc733287e3166809c1460794323b8fe60c180090ff1aa87e97 12330 watcher-client_0.1.0_all.deb
 Files: 
- 396d55c36f4a2557f1b1971bebf3c1ad 1170 misk extra watcher-client_0.1.0.dsc
- 75966654ddd7a78304358340603c158c 14964 misk extra watcher-client_0.1.0.tar.gz
- c683435a3727fc0e6d1a085a26b37ad7 12330 misk extra watcher-client_0.1.0_all.deb
+ 87fb7d8feb85e105b29e7992126eb062 1170 misk extra watcher-client_0.1.0.dsc
+ 201b259642e3898e60b5599434b36807 15013 misk extra watcher-client_0.1.0.tar.gz
+ dfb10e9cfb61f70aa8c699248c880582 12330 misk extra watcher-client_0.1.0_all.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJXBmaQAAoJEDBr1JZLlW7qitYH/jMpZMTjKs5Be49c9KfDdfsL
-XOPMYwvKykKclcpMEg1uFzEiHfo2MLyJkNJgk1ZNca4SYbTGKwssrz3F0nes3nUT
-/opWCj9kg1m2TXv33ledkGd4fbHeM2HhcCZHgl5YhNKAoAkbihZdieTqT7Ml55bi
-Lir9VEo0+fZbbk8+MOzTM73hnFpJ3VQUU04pxT73VdsBIYj9O1ZhFeGnfyZUCPdO
-2EGSMtwYI3oIEgTNM0mPTTh/YL47ElsuqXP8RfkScJj238Wz+rY/qW4V7MLkpgel
-hg4otnKceTx0m2mKypoqwHlCQEYBSSpK17KxigjK25yQR4giWCthI0czE5HIM8U=
-=kD7Z
+iQEcBAEBAgAGBQJXDqrsAAoJEDBr1JZLlW7qzjcH/iaPGeFKIviRpkdI6h5NHo2D
+npFFyEcMjWe6hdvmCJeKLPgKf0gY5JCPzf0IUHch2R0kUdDgPyGwoqE37nzHmj53
+/9NdIR/D1P8zdB7SP9ZHUW7KlyA1/KrCaUJWwIxGAxIEzwprogzzNCm7D+DCrPys
+g5fmq1A2HDU3w3X89l9CjoiBYj/9EyPf5s182BRlwBWi3IB5o9YlRsSwpUuEt8F2
+wCNMgtt0YaDOjwVvTnwinlAqe9McmFA+ydYjcVfMrtonxr6T2Do8WqjV+0WZ7SXe
+KjWBDy+pBZ2yRg03SNwzzFkCL6BrZx2hhmjbfaT6lnYSLS1RyxY/awq4mVupFng=
+=IRgO
 -----END PGP SIGNATURE-----
