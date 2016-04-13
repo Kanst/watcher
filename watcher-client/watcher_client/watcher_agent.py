@@ -648,7 +648,7 @@ class AgentWorker(Thread):
                 out_to_file = dict(zip(tmp_header, tmp_line))
                 f = open(self.c_file, 'w')
                 for key, val in out_to_file.iteritems():
-                    f.write("%s = %s\n" % (key, val))
+                    f.write("%s=%s\n" % (key, val))
                 f.close()
                 sys.stdout.write(row + '\n')
                 sys.stdout.flush()

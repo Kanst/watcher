@@ -13,21 +13,21 @@ Build-Depends: cdbs, debhelper (>= 8.0.0), python (>= 2.6)
 Package-List: 
  watcher-client deb misk extra
 Checksums-Sha1: 
- 84fbafbcb8961c01d172641c72e3dc57344d4f12 15013 watcher-client_0.1.0.tar.gz
+ f973ae9bc3d5e3e00731912884cb0d16fb24fad2 15047 watcher-client_0.1.0.tar.gz
 Checksums-Sha256: 
- 45c71d77578250fb8a37a29212c31b11044a18ba5be92b714e78cbe001144d26 15013 watcher-client_0.1.0.tar.gz
+ 15dfc19a4aecef8d6d1c31876f6c90903462f30cd8b792d3657a5c2459912c5a 15047 watcher-client_0.1.0.tar.gz
 Files: 
- 201b259642e3898e60b5599434b36807 15013 watcher-client_0.1.0.tar.gz
+ ed3e97e2b5afb26abc0900f5a6675bcf 15047 watcher-client_0.1.0.tar.gz
 Python-Version: all
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJXDqrqAAoJEDBr1JZLlW7qsukIAMR+aKrkFqDFWtQEvbhr0Gc5
-BJJxVT9BTNrKy/a2KfFspO1pY3UwwSvdwJuWoaB9v0qVxJXX3BCMuLBobreKc0Rk
-QCoGXfL+k1JYcThhbx1RrHQQEwHhmB61rqUlbGprpj78HbNpzFSYhydBZbVHAYvF
-0yFc4n6klmVq6ZaGca3gq1MA/3surJiamm9EZO4gLvmC7qr2RAE8HHrb/i4hIhJb
-Qef7rEkZF7r+Seq7lfEiFlwWGaTZPFasd9E97ReXjZ4eWeGgac0WxwvhVBqAlp0i
-1yU6RklhvAdcS5sC+NOJr9HaWG/x6AqWuQ2Yy8E7aWELxhLqrsSg4kHMikn1S/U=
-=gNwB
+iQEcBAEBAgAGBQJXDrsuAAoJEDBr1JZLlW7qkoQH/3G5xtcs5lFMiHQsl+m2C4wr
+d5v7s4nQwFHTaxSG8t8yGy7vz7mMwsGBWEop1sAU0kzVYxJZVRbIdAb66BUGv3Qt
+htgx4I5MDy4bxWlGkjS5L5soeLzoG/koXjqqZImt/lvlyPMqMkkJVZnPlz+wRn1h
+nvnTm+qDigXOIcMPxrCyzsxUbovyDJHcm/LQGJ9a37O0JTlEB3egpAerjZg9/wY1
+rkAW2WfVTMZ0RcHgoZdXZsdi9phj7TP9ZY5u+SPwZuHCioC+SLfmuHJ+EtWagX7y
+VHyoDIwiOQtZgT3DamjNIqv0u9BQaTzH3srJnweRWbxxtztrNVpIOMMcNVMZWpU=
+=jpQ2
 -----END PGP SIGNATURE-----
