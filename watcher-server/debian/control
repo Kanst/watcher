@@ -9,6 +9,6 @@ Homepage: https://github.com/Kanst/watcher/watcher-client
 
 Package: watcher-server
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, mongodb, gcc, g++, python-pymongo (<= 2.6.10), python-mysqldb, python-twisted, python-simplejson, python-psycopg2
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, mongodb, gcc, g++, python-pymongo (<= 2.6.10), python-mysqldb, python-twisted, python-simplejson, python-psycopg2, watcher-client, python-yaml
 XB-Python-Version: all
 Description: client for watcher (https://github.com/Kanst/watcher)
