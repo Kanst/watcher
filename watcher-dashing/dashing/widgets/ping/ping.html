@@ -1,0 +1,17 @@
+<h1 class="title" data-bind="title" ></h1>
+<table id='table1' class="table table-bordered table-condensed" data-bind-style="style1">
+  <tr data-foreach-row="rows1" data-bind-class="row.class">
+    <td  data-foreach-col="row.cols" data-bind-class="col.y_class" data-bind="col.value" data-bind-title="col.title"></td>
+  </tr>
+</table>
+
+<table id='table2' class="table table-bordered table-condensed" data-bind-style="style2">
+  <tr data-foreach-row="rows2" data-bind-class="row.class">
+    <td  data-foreach-col="row.cols" data-bind-class="col.y_class" data-bind="col.value" data-bind-title="col.title"></td>
+  </tr>
+</table>
+
+
+
+<p class="more-info" data-bind="moreinfo"></p>
+<p class="updated-at" data-bind="updatedAtMessage"></p>

@@ -1,0 +1,9 @@
+pg_stat_database:
+    request: select * from pg_stat_database;
+    host: kanst9-dev.cmail.yandex.net
+    user: postgres
+    pass: password
+    port: 5432
+    db: postgres
+    db_type: psycopg2
+    update_time: 10

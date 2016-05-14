@@ -1,0 +1,59 @@
+<iframe id="0"  src="http://golovan.yandex-team.ru/panel/?mini" width="100%" height="100%">panel</iframe>
+<script>
+            function repeat(func, delta, timeout) {
+                var stop = false;
+                function iterate() {
+                    if (stop) { return; }
+                    func();
+                    setTimeout(iterate, delta);
+                }
+                setTimeout(function() {
+                    stop = true;
+                    },
+                    timeout
+                );
+                iterate();
+            }
+
+            repeat(function() {document.getElementById("0").contentWindow.postMessage({panelConfig: {
+                        "charts": [
+{
+            "title": "HTTP timings",
+            "period": 5,
+            "backgroundColor": "#333333",
+            "minValue": 90,
+            "signals": [
+                {
+                    "color": "#34c924",
+                    "signal": "MAILSETTINGS:mailsettings_self:mail_settings_accesslog-http_timings_abs_20ms_cnt_perc",
+                    "name": "0-0.02s"
+                },
+                {
+                    "color": "#5da130",
+                    "signal": "MAILSETTINGS:mailsettings_self:mail_settings_accesslog-http_timings_abs_100ms_cnt_perc",
+                    "name": "0.02-0.1s"
+                },
+                {
+                    "color": "#1560bd",
+                    "signal": "MAILSETTINGS:mailsettings_self:mail_settings_accesslog-http_timings_abs_300ms_cnt_perc",
+                    "name": "0.1-0.3s"
+                },
+                {
+                    "color": "#c41e3a",
+                    "signal": "MAILSETTINGS:mailsettings_self:mail_settings_accesslog-http_timings_abs_1s_cnt_perc",
+                    "name": "0.3-1s"
+                },
+                {
+                    "color": "#de3163",
+                    "signal": "MAILSETTINGS:mailsettings_self:mail_settings_accesslog-http_timings_abs_over_1s_cnt_perc",
+                    "name": "over 1s"
+                }
+            ],
+            "maxValue": 100,
+            "col": "left"
+        }
+   ]
+}}, "*"); }, 100, 2000);
+        
+        
+</script>

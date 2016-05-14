@@ -1,0 +1,24 @@
+upstream dashing_upstream {
+    server 127.0.0.1:3030 max_fails=1 fail_timeout=10s;
+}
+
+
+server {
+    listen 80;
+    listen [::]:80 ipv6only=on;
+    server_name  watcher;
+
+    location / {
+                root /usr/lib/yandex/dashing/assets;
+                proxy_set_header Host       $host;
+                proxy_set_header X-Real-IP $remote_addr;
+
+        if (-f $request_filename) {
+            break;
+        }
+        if (!-f $request_filename) {
+            proxy_pass http://dashing_upstream;
+        }
+    }
+    error_page   500 502 503 504  /500.html;
+}

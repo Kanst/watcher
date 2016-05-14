@@ -1,0 +1,24 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #333;
+$value-color:       #fff;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$label-color:       #333333;
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-bigping styles
+// ----------------------------------------------------------------------------
+.widget-bigping {
+
+  background-color: $background-color;
+  color: #fff;
+  vertical-align: middle;
+  font-size: 16px;
+  .more-info {
+    color: $moreinfo-color;
+  }
+
+}

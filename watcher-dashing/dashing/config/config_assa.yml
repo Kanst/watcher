@@ -1,0 +1,90 @@
+pg_stat:
+  split_str: "nosplit" 
+  metrics:
+    numbackends:
+      shortname: "numbackends"
+      type: 'int'
+      div: 1
+      total: True
+
+    xact_commit:
+      shortname: "xact_commit"
+      type: 'int'
+      div: 1
+      total: True
+
+    numbackends:
+      shortname: "numbackends"
+      type: 'int'
+      div: 1
+      total: True
+
+    xact_rollback:
+      shortname: "xact_rollback"
+      type: 'int'
+      div: 1
+      total: True
+
+    blks_read:
+      shortname: "blks_read"
+      type: 'int'
+      div: 1
+      total: True
+
+    blks_hit:
+      shortname: "blks_hit"
+      type: 'int'
+      div: 1
+      total: True 
+
+    tup_returned:
+      shortname: "tup_returned"
+      type: 'int'
+      div: 1
+      total: True 
+
+    tup_fetched:
+      shortname: "tup_fetched"
+      type: 'int'
+      div: 1
+      total: True 
+
+    tup_inserted:
+      shortname: "tup_inserted"
+      type: 'int'
+      div: 1
+      total: True 
+
+    tup_updated:
+      shortname: "tup_updated"
+      type: 'int'
+      div: 1
+      total: True 
+
+    tup_deleted:
+      shortname: "tup_deleted"
+      type: 'int'
+      div: 1
+      total: True 
+
+    datid:
+      shortname: "datid"
+      type: 'int'
+      div: 1
+      total: False
+  
+    blk_read_time:
+      shortname: "blk_read_time"
+      type: 'float'
+      div: 1
+      total: True
+all_metrics:
+  split_str: ".cmail.yandex.net" 
+  ignore: "System_la5,System_la15"
+  metrics:
+    Memory_free:
+      div: 0.000001
+      min_val_warning: 134217728
+      max_val_warning: 9999999999999
+      min_val_error: 67108864
+      max_val_error: 9999999999999

@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'dashing'
+
+## Remove this if you don't need a twitter widget.
+
+gem 'mongo'
+gem 'bson_ext'
+gem 'execjs'
+gem 'therubyracer'

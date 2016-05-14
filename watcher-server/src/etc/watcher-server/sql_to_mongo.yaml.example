@@ -1,0 +1,18 @@
+ddfl:
+    request: select round(sum(grand_total_free_space)/(select sum(req_size)/1024/3 from mulca_stats.mulca_usage_stats where req_type='PUT' and (TO_DAYS(CURDATE()) - TO_DAYS(date)) <= 3 and service not regexp 'sasulca|zima|leto|(ip6-)?localhost|migrate|mailsql'),2) as days_left from mulca_migrate.active_hosts where in_service=0;
+    host: yandex.net
+    user: user
+    pass: pass
+    port: 3306
+    db: mulca_shepherd
+    db_type: MySQLdb
+    update_time: 1800
+ddfz:
+    request: select round(sum(grand_total_free_space)/(select sum(req_size)/1024/3 from mulca_stats.mulca_usage_stats where req_type='PUT' and (TO_DAYS(CURDATE()) - TO_DAYS(date)) <= 3 and service not regexp 'sasulca|zima|leto|(ip6-)?localhost|migrate|mailsql'),2) as days_left from mulca_migrate.archive_hosts where in_service=0;
+    host: yandex.net
+    user: dfsdf
+    pass: fdsdf
+    port: 3306
+    db: mulca_shepherd
+    db_type: MySQLdb
+    update_time: 1800

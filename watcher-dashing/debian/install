@@ -1,0 +1,4 @@
+dashing/      /usr/lib/watcher/
+dashboard /etc/init.d/
+nginx/dashing /etc/nginx/sites-available/
+wd-dashing /etc/cron.d/

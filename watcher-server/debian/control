@@ -1,0 +1,14 @@
+Source: watcher-server
+Section: misk
+Priority: extra
+Maintainer: Avramenko Evgeny <kanst9@yandex-team.ru>
+Build-Depends: cdbs, debhelper (>= 8.0.0), python (>=2.6), python-central
+Standards-Version: 3.9.2
+XS-Python-Version: all
+Homepage: https://github.com/Kanst/watcher/watcher-client
+
+Package: watcher-server
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, mongodb, gcc, g++, python-pymongo (<= 2.6.10), python-mysqldb, python-twisted, python-simplejson, python-psycopg2, watcher-client, python-yaml
+XB-Python-Version: all
+Description: client for watcher (https://github.com/Kanst/watcher)

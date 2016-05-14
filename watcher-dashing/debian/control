@@ -1,0 +1,14 @@
+Source: watcher-dashing
+Section: misk
+Priority: extra
+Maintainer: Avramenko Evgeny <kanst9@yandex-team.ru>
+Build-Depends: debhelper (>= 7.0.0)
+Standards-Version: 3.9.2
+Homepage: https://github.com/Kanst/watcher
+Vcs-Git: git://github.com/Kanst/watcher/
+
+Package: watcher-dashing
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, watcher-server, mongodb, gcc, g++, python-pymongo, nginx, python-psycopg2
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

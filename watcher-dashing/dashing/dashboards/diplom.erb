@@ -1,0 +1,47 @@
+<script type='text/javascript'>
+$(function() {
+  Dashing.widget_base_dimensions = [360, 65]
+  Dashing.numColumns = 5
+});
+</script>
+<% content_for :title do %>АССА<% end %>
+<div class="gridster">
+    <ul>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="4">
+          <div data-view="Clock" style="background-color:#47bbb3;"></div>
+        </li>
+        <li data-row="1" data-col="2" data-sizex="1" data-sizey="4">
+          <div data-id="la1" data-view="Graph" data-title="Средняя нагрузка" style="background-color:#47bbb3;" data-moreinfo="Интервал 5 секунд" ></div>
+        </li>
+        <li data-row="1" data-col="3" data-sizex="1" data-sizey="4">
+          <div data-id="cpu-sys" data-view="Meter" data-title="Загрузка процессора" style="background-color:#47bbb3;" data-moreinfo="В процентах" data-min="0" data-max="100"></div>
+        </li>
+        <li data-row="1" data-col="4" data-sizex="1" data-sizey="4">
+          <div data-id="disk-read" data-view="Number" data-title="Байт прочитано с диска" style="background-color:#47bbb3;"></div>
+        </li>
+        <li data-row="1" data-col="5" data-sizex="1" data-sizey="4">
+          <div data-id="disk-write" data-view="Number" data-title="Байт записано на диск" style="background-color:#47bbb3;"></div>
+        </li>
+        <li data-row="2" data-col="1" data-sizex="1" data-sizey="4">
+          <div data-id="mem-free" data-view="Graph" data-title="Свободно памяти" style="background-color:#47bbb3;" data-moreinfo="Интервал 5 секунд" ></div>
+        </li>
+        <li data-row="2" data-col="2" data-sizex="1" data-sizey="4">
+          <div data-id="cpu-iowait" data-view="Meter" data-title="iowait" style="background-color:#47bbb3;" data-moreinfo="В процентах" data-min="0" data-max="100"></div>
+        </li>
+        <li data-row="2" data-col="3" data-sizex="1" data-sizey="4">
+          <div data-id="net-send" data-view="Number" data-title="Байт передано" style="background-color:#47bbb3;"></div>
+        </li>
+        <li data-row="2" data-col="4" data-sizex="1" data-sizey="4">
+          <div data-id="net-recv" data-view="Number" data-title="Байт получено" style="background-color:#47bbb3;"></div>
+        </li>
+        <li data-row="2" data-col="5" data-sizex="1" data-sizey="4">
+          <div data-id="net-retransmit" data-view="Number" data-title="Повторные отправки пакетов" style="background-color:#47bbb3;"></div>
+        </li>
+	<li data-row="3" data-col="1" data-sizex="5" data-sizey="3">
+	  <div data-id="pg_stat_database" data-view="Table" data-title="PostrgeSQL" data-text="Тут будет таблица с метриками postgresql"></div>
+	</li>
+	<li data-row="4" data-col="1" data-sizex="5" data-sizey="2">
+	  <div data-id="server_all_metrics" data-view="Table" data-title="PostrgeSQL" data-text="Тут будет таблица с метриками postgresql"></div>
+	</li>
+        </ul>
+</div>

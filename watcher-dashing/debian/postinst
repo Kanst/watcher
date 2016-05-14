@@ -1,0 +1,10 @@
+#!/bin/sh
+chmod 755 /etc/init.d/dashboard
+chmod 644 /etc/cron.d/wd-dashing
+mkdir -p /srv/http/images
+update-rc.d dashboard defaults
+
+ln -nfs /etc/nginx/sites-available/dashing /etc/nginx/sites-enabled/dashing
+
+cd /usr/lib/watcher/dashing/
+bundle

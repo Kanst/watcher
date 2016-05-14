@@ -1,0 +1,24 @@
+<table id='table1' class="table table-condensed table-bordered" data-bind-style="style1">
+    <thead>
+        <tr>
+            <th data-foreach-header="headers1" data-bind="header.value" data-bind-class="header.y_class" data-bind-title="header.title"></th>
+        </tr>
+    </thead>
+  <tr data-foreach-row="rows1" data-bind-class="row.class">
+    <td  data-foreach-col="row.cols" data-bind-class="col.y_class" data-bind="col.value" data-bind-title="col.title"></td>
+  </tr>
+</table>
+
+<table id='table2' class="table table-condensed table-bordered" data-bind-style="style2">
+    <thead>
+        <tr>
+            <th data-foreach-header="headers2" data-bind="header.value" data-bind-class="header.y_class" data-bind-title="header.title"></th>
+        </tr>
+    </thead>
+  <tr data-foreach-row="rows2" data-bind-class="row.class">
+    <td  data-foreach-col="row.cols" data-bind-class="col.y_class" data-bind="col.value" data-bind-title="col.title"></td>
+  </tr>
+</table>
+
+<p class="more-info" data-bind="moreinfo"></p>
+<p class="updated-at" data-bind="updatedAtMessage"></p>

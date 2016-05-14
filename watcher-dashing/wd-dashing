@@ -1,0 +1,4 @@
+SHELL=/bin/sh
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
+*/1 * * * * root curl 'http://localhost:3030/mail' -o /dev/null 2>/dev/null; [ $? != "0" ] && (/etc/init.d/dashboard restart ; logger -p daemon.err "dashing restarted") >/dev/null 2>&1
