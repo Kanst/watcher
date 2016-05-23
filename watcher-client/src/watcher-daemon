@@ -3,6 +3,7 @@
 
 from __future__ import print_function
 import sys
+sys.path.append('/usr/share/pyshared')
 import argparse
 import pydaemon
 import os
