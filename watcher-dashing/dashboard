@@ -23,16 +23,17 @@
 
 set -e
 . /lib/lsb/init-functions
+# source /etc/profile.d/rvm.sh
 
 # Must be a valid filename
 NAME=dashing
 DASHING_DIR=/usr/lib/watcher/dashing
 PIDFILE="/var/run/$NAME.pid"
-DAEMON=/usr/local/bin/$NAME
-GEM_HOME=/var/lib/gems/2.0.0
+DAEMON=/usr/local/rvm/gems/ruby-2.0.0-p648/bin/$NAME
+# GEM_HOME=/usr/local/rvm/gems/ruby-2.0.0-p648
 
 DASHING_PORT=3030
-DAEMON_OPTS="start -d -p $DASHING_PORT -P $PIDFILE --tag $NAME -D"
+DAEMON_OPTS="start -d -p $DASHING_PORT -P $PIDFILE --tag $NAME"
 
 RUNUSER=root
 RUNGROUP=root
