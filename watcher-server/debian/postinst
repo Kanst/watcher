@@ -2,4 +2,6 @@
 
 echo 'db.addUser("dashing", "WtDqAZ0J")' | mongo dashing
 
+/etc/init.d/watcher-server-daemon  restart
+
 exit 0

@@ -71,7 +71,7 @@ def to_mongo(group, host, tailer, err):
                 try:
                     tail[spl[0].strip()] = int(spl[1].strip())
                 except:
-                    tail[spl[0].strip()] = '='.join(spl[1:].strip())
+                    tail[spl[0].strip()] = '='.join(spl[1:])
     else:
         tail['err'] = True
     db[group].update({'host': host}, {"$set": tail}, True)
