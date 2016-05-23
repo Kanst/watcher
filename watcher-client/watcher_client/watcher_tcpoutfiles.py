@@ -5,6 +5,8 @@ import socket
 import logging
 from ConfigParser import RawConfigParser
 import os.path
+import time
+import sys
 
 
 def send_answer(conn, data=""):
@@ -24,6 +26,7 @@ def parse(conn, addr, files, log):
             else:
                 log.error('File %s not exist' % cat)
     send_answer(conn, data=out)
+    conn.close()
 
 
 def watcher_tcpoutfiles():
@@ -47,7 +50,18 @@ def watcher_tcpoutfiles():
 
     # create socket
     sock = socket.socket()
-    sock.bind(("", _port))
+    n = 10
+    for x in range(n):
+        try:
+            sock.bind(("", _port))
+            break
+        except socket.error:
+            if x != n-1:
+                log.info("[Errno 98] Address already in use; try {0}".format(x))
+                time.sleep(10)
+            else:
+                log.error("Exit. [Errno 98] Address already in use;")
+                sys.exit(1)
     sock.listen(5)
     log.info('Starting server')
 

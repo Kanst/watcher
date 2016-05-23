@@ -7,6 +7,7 @@ import argparse
 import pydaemon
 import os
 import multiprocessing
+import subprocess
 
 from watcher_client.watcher_agent import watcher_agent
 from watcher_client.watcher_tcpoutfiles import watcher_tcpoutfiles
@@ -62,6 +63,11 @@ if __name__ == '__main__':
     elif operation == 'stop':
         print("Stoping daemon")
         daemon.stop()
+        process = subprocess.Popen("ps aux | grep [w]atcher-daemon | awk '{print $2}' | xargs kill -9 ; rm /var/run/watcher-client.pid 2>/dev/null",
+                             shell=True,
+                             stdout=subprocess.PIPE,
+                           )
+        process.communicate()
 
     elif operation == 'restart':
         print("Restarting daemon")
