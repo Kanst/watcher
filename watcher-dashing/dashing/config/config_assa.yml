@@ -1,5 +1,6 @@
+host: localhost
 pg_stat:
-  split_str: "nosplit" 
+  split_str: "nosplit"
   metrics:
     numbackends:
       shortname: "numbackends"

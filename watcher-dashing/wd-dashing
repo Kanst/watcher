@@ -1,4 +1,6 @@
 SHELL=/bin/sh
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+GEM_HOME=/usr/local/rvm/gems/ruby-2.0.0-p648
+GEM_PATH=/usr/local/rvm/gems/ruby-2.0.0-p648:/usr/local/rvm/gems/ruby-2.0.0-p648@global
 
-*/1 * * * * root curl 'http://localhost:3030/mail' -o /dev/null 2>/dev/null; [ $? != "0" ] && (/etc/init.d/dashboard restart ; logger -p daemon.err "dashing restarted") >/dev/null 2>&1
+*/1 * * * * root curl 'http://localhost:3030/mail' -o /dev/null 2>/dev/null; [ $? != "0" ] && (/etc/init.d/dashboard restart ; logger -p daemon.err "dashing restarted") > /root/test_file 2>&1

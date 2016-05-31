@@ -52,8 +52,8 @@ function checkuser() {
 function start_dashing() {
   log_action_msg "Starting daemon: $NAME" || true
   sleep 5
-  /etc/init.d/watcher-server-daemon start
   start-stop-daemon --verbose --quiet --start --chuid $RUNUSER:$RUNGROUP --chdir $DASHING_DIR --exec $DAEMON -- $DAEMON_OPTS
+  /etc/init.d/watcher-server-daemon start
   log_end_msg 0
 }
 

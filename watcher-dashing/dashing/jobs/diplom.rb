@@ -19,7 +19,7 @@ SCHEDULER.every "#{interval_sec}s" do
     send_to_pg_table(data, config['pg_stat'], table_vision, 'pg_stat_database')
 
     coll = db['assa']
-    res = coll.find('host' => 'kanst9-dev.cmail.yandex.net')
+    res = coll.find('host' => config['host'])
     send_to_one_widget(widget='disk-write', widget_type='Number', mongo_res=res.clone, key='Disk_write')
     send_to_one_widget(widget='disk-read', widget_type='Number', mongo_res=res.clone, key='Disk_read')
     send_to_one_widget(widget='cpu-sys', widget_type='Meter', mongo_res=res.clone, key='CPU_system', interval=interval_sec, div=1, warning=[50, 89], error=[90, 100])

@@ -3,6 +3,8 @@ chmod 755 /etc/init.d/dashboard
 chmod 644 /etc/cron.d/wd-dashing
 mkdir -p /srv/http/images
 update-rc.d dashboard defaults
+update-rc.d watcher-server-daemon defaults
+update-rc.d watcher-daemon defaults
 
 ln -nfs /etc/nginx/sites-available/dashing /etc/nginx/sites-enabled/dashing
 
